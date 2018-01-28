@@ -125,32 +125,17 @@ struct User {
         
         //MARK: - CONVERT FROM UNIX TIME TO FORMATTED DATE:
         
-        func formatDate(_ unix: Double) -> String {
+        func formatDate(_ unix: Double, timeStyle: DateFormatter.Style = .medium) -> String {
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
-            dateFormatter.timeStyle = .medium
-            
+            dateFormatter.timeStyle = timeStyle
             let date = Date(timeIntervalSince1970: unix)
             
             // US English Locale (en_US)
             dateFormatter.locale = Locale(identifier: "en_US")
             return dateFormatter.string(from: date)
         }
-        
-        func formatDateOnly(_ unix: Double) -> String {
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            dateFormatter.timeStyle = .none
-            
-            let date = Date(timeIntervalSince1970: unix)
-            
-            // US English Locale (en_US)
-            dateFormatter.locale = Locale(identifier: "en_US")
-            return dateFormatter.string(from: date)
-        }
-        
         
         //MARK: - REGEX PATTERN MATCHING:
         func reg(_ pat: String) -> String {
@@ -314,7 +299,7 @@ struct User {
         
         
         passUpdateDate = formatDate(unixPass)
-        passExpDate = formatDateOnly(unixPassExpDate)
+        passExpDate = formatDate(unixPassExpDate, timeStyle: .none)
         badPassTime = formatDate(unixBadPass)
         let lastLogonDays = Int((unixToday - unixLastLogon) / 86400)
         switch lastLogonDays {

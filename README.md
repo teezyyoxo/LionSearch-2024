@@ -1,7 +1,10 @@
 # LionSearch
 
-This is a macOS app (runs on Yosemite and up) that looks up user data from the Active Directory. The app executes a Shell script to pull the data (dscl localhost -read), and then it filters the results using regular expressions to present valuable information to the user, such as password expiration date, software license associations, etc.
+This is a macOS app (runs on Yosemite and up) that fetches user data from the Active Directory within a corporate environment. The app searches through a directory of 80,000 users to pull up relevant information. 
 
+The app executes a Shell script to pull the data (dscl localhost -read), and then it filters the results using regular expressions to present valuable information to the user, such as password expiration date, software license associations, etc.
+
+Here is what it looks like using (using fake data for demo purposes): 
 <img src="https://github.com/almaleh/LionSearchDemo/blob/master/DemoGif.gif" width="450">
 
 View .mov version here: https://goo.gl/PH6L7L

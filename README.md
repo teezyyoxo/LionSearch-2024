@@ -7,7 +7,8 @@ The app executes a Shell script to pull the data (dscl localhost -read), and the
 
 Here is what it looks like using (using fake data for demo purposes): 
 
-<img src="https://github.com/almaleh/LionSearchDemo/blob/master/DemoGif.gif" width="450">
+<img src="https://github.com/almaleh/LionSearchDemo/blob/master/DemoGif.gif" width="350">
+<img src="https://github.com/almaleh/LionSearchDemo/blob/master/Screenshot.png" width="350">
 
 View .mov version here: https://goo.gl/PH6L7L
 

@@ -6,6 +6,8 @@
 //  Copyright © 2017 Besher Al Maleh. All rights reserved.
 //
 
+// UPDATE LINE 272 TO *YOUR* DOMAIN (as shown by the output of "dscl localhost -list /Active\ Directory"
+
 import Cocoa
 
 class ViewController: NSViewController, NSTextFieldDelegate, NSSearchFieldDelegate {

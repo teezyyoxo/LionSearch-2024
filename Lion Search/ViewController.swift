@@ -267,8 +267,12 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSSearchFieldDelega
     func checkStatus() {
         spinner.isHidden = false
         spinner.startAnimation(srchField)
+        
+        // Check if connected to the domain
+        let domain = "ADMINLAN"  // Use the domain name listed by dscl
         user.shell("dsconfigad", "-show")
-        user.shell("dscl", "localhost", "-read", "Active Directory/LL/All Domains/")
+        user.shell("dscl", "localhost", "-read", "Active Directory/\(domain)/All Domains/")
+        
         if user.disconnected {
             animateAlert("show")
             fullNameLabel.textColor = NSColor.red
@@ -279,9 +283,9 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSSearchFieldDelega
             return
         }
         if !user.llBound {
-            fullNameLabel.stringValue = "Mac is not bound to LL!"
+            fullNameLabel.stringValue = "Mac is not bound to the domain!"
             fullNameLabel.textColor = NSColor.red
-            jobTitleLabel.stringValue = "Bind your Mac to global.publicisgroupe.net then rerun the app"
+            jobTitleLabel.stringValue = "Bind your Mac to ADMINLAN then rerun the app"
             animateAlert("show")
             spinner.stopAnimation(srchField)
             spinner.isHidden = true

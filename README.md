@@ -15,6 +15,10 @@ View .mov version here: https://goo.gl/PH6L7L
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.94] - 2024-11-8
+### Changed
+- Runs ("technically") on modern versions of macOS and Xcode. Still needs some polishing; dscl is angry with the code.
+
 ## [0.93] – 2017-11-24
 ### Changed
 - Vastly improved auto-complete behavior. It’s now lightning fast, showing instant suggestions as you type!
